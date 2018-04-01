@@ -32,11 +32,13 @@ function init(){
 			$( answ ).click( function() {
 				console.log( ">>>>" );
 				$("#"+btnStr).removeClass("disabled");
+				$("#"+btnStr).removeClass("disableClick");
+				$("#"+btnStr).prop("disabled", false);
 			} );
 			$( answ ) . appendTo( lbl );
 			$( lbl ) . appendTo( q ); 
 		});
-		var nextButton = $( "<button class='btn disabled' id=" + btnStr + ">Далее</button>" );
+		var nextButton = $( "<button class='btn disabled disableClick' id=" + btnStr + " disabled>Далее</button>" );
  		$( nextButton ) . click (	function() { 
 			proceed( this );
 		});
